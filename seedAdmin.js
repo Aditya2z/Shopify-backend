@@ -13,23 +13,33 @@ const seedAdminUsers = async () => {
         name: "Admin1",
         email: "admin1@gmail.com",
         password: "admin1",
-        isAdmin: true,
+        isAdmin: false,
       });
 
       const admin2 = new User({
         name: "Admin2",
         email: "admin2@gmail.com",
         password: "admin2",
-        isAdmin: true,
+        isAdmin: false,
       });
 
       // Save the admin users
       await admin1.save();
       await admin2.save();
 
-      console.log("Admin users seeded successfully");
+      console.log(
+        `Users seeded: 
+        {email: "admin1@gmail.com",password: "admin1"} 
+        &
+        {email: "admin2@gmail.com",password: "admin2"}`
+      );
     } else {
-      console.log("Admin users already exist. No need to seed.");
+      console.log(
+        `{email: "admin1@gmail.com",password: "admin1"} 
+        & 
+        {email: "admin2@gmail.com",password: "admin2"} 
+        users already exist. No need to seed.`
+      );
     }
   } catch (error) {
     console.error("Error seeding admin users:", error);
