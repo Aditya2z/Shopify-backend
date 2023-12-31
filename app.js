@@ -20,7 +20,7 @@ console.log("Mongouri",process.env.Mongo_Uri);
 console.log(process.env);
 
 mongoose
-  .connect(process.env.Mongo_Uri)
+  .connect(`${process.env.Mongo_Uri}`)
   .then(() => {
     console.log("Connected Successfully to shopify");
     seedAdminUsers();
