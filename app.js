@@ -17,7 +17,7 @@ const app = express();
 app.use(cors());
 
 mongoose
-  .connect("mongodb+srv://aditya2z:Pj4GiT2b3WOuLUhr@mongo-cluster.lcxzlbu.mongodb.net/shopify?retryWrites=true&w=majority")
+  .connect(`mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASS}@mongo-cluster.lcxzlbu.mongodb.net/shopify?retryWrites=true&w=majority`)
   .then(() => {
     console.log("Connected Successfully to shopify");
     seedAdminUsers();
