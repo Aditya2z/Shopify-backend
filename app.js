@@ -16,9 +16,6 @@ const cartRouter = require("./routes/cart");
 const app = express();
 app.use(cors());
 
-console.log("Mongouri",process.env.Mongo_Uri);
-console.log(process.env);
-
 mongoose
   .connect(`${process.env.Mongo_Uri}`)
   .then(() => {
