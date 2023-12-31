@@ -3,6 +3,7 @@ const express = require("express");
 const path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
+const cors = require('cors');
 const mongoose = require("mongoose");
 require("dotenv").config();
 const auth = require("./middlewares/auth");
@@ -13,6 +14,7 @@ const adminRouter = require("./routes/admin");
 const cartRouter = require("./routes/cart");
 
 const app = express();
+app.use(cors());
 
 mongoose
   .connect(process.env.Mongo_Uri)
