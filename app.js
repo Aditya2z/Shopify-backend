@@ -15,7 +15,7 @@ const cartRouter = require("./routes/cart");
 const app = express();
 
 mongoose
-  .connect("mongodb://127.0.0.1/e-commerce")
+  .connect(process.env.Mongo_Uri)
   .then(() => {
     console.log("Connected Successfully to e-commerce, running at port 5000.");
     seedAdminUsers();
