@@ -17,7 +17,7 @@ const app = express();
 mongoose
   .connect(process.env.Mongo_Uri)
   .then(() => {
-    console.log("Connected Successfully to e-commerce, running at port 5000.");
+    console.log("Connected Successfully to shopify");
     seedAdminUsers();
   })
   .catch((err) => {
