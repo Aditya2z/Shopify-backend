@@ -5,7 +5,7 @@ const User = require("./models/user");
 const seedAdminUsers = async () => {
   try {
     // Check if admin users already exist
-    const existingAdminUsers = await User.find({ isAdmin: true });
+    const existingAdminUsers = await User.find({});
 
     if (existingAdminUsers.length === 0) {
       // Create two admin users only if they don't exist
@@ -35,10 +35,7 @@ const seedAdminUsers = async () => {
       );
     } else {
       console.log(
-        `{email: "admin1@gmail.com",password: "admin1"} 
-        & 
-        {email: "admin2@gmail.com",password: "admin2"} 
-        users already exist. No need to seed.`
+        `{email: "admin1@gmail.com",password: "admin1"} & {email: "admin2@gmail.com",password: "admin2"} users already exist. No need to seed.`
       );
     }
   } catch (error) {
